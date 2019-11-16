@@ -66,7 +66,7 @@ def stop_impersonate(request):
     use_refer = settings.USE_HTTP_REFERER
 
     if impersonating is not None:
-	request.session.pop('companyUser', None)  # Remove the companyUser from the current session
+        request.session.pop('companyUser', None)  # Remove the companyUser from the current session
         request.session.modified = True
         session_end.send(
             sender=None,
